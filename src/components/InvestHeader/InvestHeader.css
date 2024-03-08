@@ -1,0 +1,19 @@
+.invest-header{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}   
+.invest-header button:hover{
+    background-color: white;
+}
+.invest-header h4{
+    margin: 0;
+    color: black;
+}
+.invest-header-btn{
+    opacity:0.4;
+    scale: 0.7;
+    border: none;
+    cursor: pointer;
+    margin-top: 7px;
+}

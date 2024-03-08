@@ -1,0 +1,23 @@
+ header button{
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border-width: thin;
+    width: 100px;
+    height: 40px;
+}
+.App{
+  overflow: auto;
+  background-color: aliceblue;
+  height: auto;
+  /* height: 100vh; */
+}
+header{
+  background-color: white;
+  box-shadow:  1px 1px 5px rgb(206, 205, 205);
+}
+.applyCss{
+  background-color: rgb(23, 23, 223);
+  color: white;
+  border: 1.5px solid rgb(0, 0, 0);
+}

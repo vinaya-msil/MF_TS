@@ -1,0 +1,29 @@
+.fund-manager{
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+}
+.fund-manager h4{
+    color: black;
+    margin: 0;
+}
+.fund-manager-body{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.fund-manager-details p{
+    margin: 0;
+}
+.name-logo{
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    padding: 5px;
+    text-align: center;
+
+}
+.name{
+    font-weight: bold;
+}
