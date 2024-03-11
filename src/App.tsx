@@ -36,6 +36,7 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={<Trade />} />
+          <Route path="/trade" element={<Trade />} />
           <Route path="/order" element={<Table />} />
           <Route path="/invest" element={<Invest />} />
         </Routes>
