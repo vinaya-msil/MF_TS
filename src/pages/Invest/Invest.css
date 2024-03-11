@@ -1,0 +1,15 @@
+.invest{
+    display: flex;
+
+}
+.card-layout{
+    background-color: white;
+    border-radius: 5px;
+    overflow: auto;
+}
+.invest-body{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 15px;
+}

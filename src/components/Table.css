@@ -1,0 +1,118 @@
+table{
+    margin-top: 10px;
+    border-radius: 12px;
+    overflow-x: auto;
+    background-color: rgb(255, 255, 255);
+}
+.selected-button{
+    background-color: rgb(39, 39, 221);
+    color: white;
+    border: 1px solid white;
+}
+.selectOption{
+    height: auto;
+    width: auto;
+    padding: 20px;
+    margin: 4px;
+    border-radius: 10px;
+}
+.table{
+    overflow: auto;
+    width: 100%;
+}
+td,th{
+    min-width: 100px;
+    max-width: 400px;
+    align-items: center;
+    justify-content: center;
+}
+th, tr{
+    height: 45px;
+}
+#OrderTypeText{
+    margin-left: 10px;
+}
+.filterButton{
+    margin-left: 10px;
+}
+.navigation-section,.OrderBookComponent{
+    overflow: auto;
+}
+.OrderBookComponent{
+    box-shadow:  1px 1px 5px rgb(206, 205, 205);
+    background-color: white;
+    padding: 2px 10px 20px 10px;
+    border-radius: 12px;
+    margin: 20px;
+}
+#selectOption{
+    color: blue;
+    height: 35px;
+    border-radius: 6px;
+    width: 80px;
+    padding: 5px;
+    margin: 2px;
+    border: 1px solid grey;
+}
+.logo{
+    height:15px;
+    width: 15px;
+}
+.Success{
+    background-color: rgb(222, 233, 222);
+    color: rgb(59, 80, 59);
+    
+}
+.pagination{
+    display: flex;
+}
+.pagination p{
+    margin-right: 10px
+}
+.Failed, .Success{
+    border: 0px;
+    border-color: white;
+    min-height: 30px;
+    max-height: 40px;
+    min-width: 100px;
+    max-width: 100px;
+    border-radius: 8px;
+    text-align: center;
+}
+.Failed{
+    background-color: rgb(228, 214, 212);
+    color: rgb(95, 67, 67);
+}
+button{
+    border-width: 2px;
+    border-color: rgb(167, 167, 194);
+    color: rgb(49, 49, 196);
+    background-color: white;
+    padding: 10px;
+}
+label{
+    font-size: 14px;
+}
+.search-input{
+    height: 25px;
+    width: 250px;
+    padding: 5px;
+    margin: 2px;
+    border: 1px solid grey;
+}
+table{
+    border-collapse: collapse;
+}
+th{
+    color: grey;
+    font-weight:300;
+    font-size: 14px;
+    border-bottom: 1px solid grey;
+    border-collapse: collapse;
+}
+.order-book-h2{
+    color: blue;
+    margin-left: 10px;
+    font-weight: 600;
+
+}

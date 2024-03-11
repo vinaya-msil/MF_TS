@@ -1,0 +1,53 @@
+.risk-rating{
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;    
+    overflow: auto;
+}
+.risk-rating h4{
+    margin: 0;
+    color: black;
+}
+.risk-rating-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.risk-rating-content span{
+    color: red;
+}
+.risk-rating-img{
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+}
+.risk-rating-card{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.risk-rating-part{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.rating-part{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.risk-star{
+    margin: 0;
+    background-color: rgba(211, 184, 134, 0.219);
+    border: 1px solid orange;
+    border-radius: 3px;
+    padding-inline: 10px;
+    
+}
+.risk-star img{
+    margin-left: 5px;
+}
+.rating-name-part{
+    display: flex;
+    flex-direction: column;
+}

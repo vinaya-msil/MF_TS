@@ -2,9 +2,9 @@ import "./App.css";
 import { useState } from "react";
 // import OrderBook from "./pages/OrderBook";
 import Trade from "./pages/Trade";
-// import Table from "./components/Table";
+import Table from "./components/Table";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Invest from "./pages/Invest/Invest";
+import Invest from "./pages/Invest/Invest";
 import { Link } from "react-router-dom";
 
 function App() {
@@ -30,14 +30,14 @@ function App() {
           <Link to={"/"}>
             <button onClick={handleMainButtonTradeState} className={tradeBtnClass} >Trade</button>
           </Link>
-          {/* <Link to={"/order"}>
+          <Link to={"/order"}>
             <button onClick={handleMainButtonOrderBookState} className={orderBookBtnClass}>Order Book</button>
-          </Link> */}
+          </Link>
         </header>
         <Routes>
           <Route path="/" element={<Trade />} />
-          {/* <Route path="/order" element={<Table />} /> */}
-          {/* <Route path="/invest" element={<Invest />} /> */}
+          <Route path="/order" element={<Table />} />
+          <Route path="/invest" element={<Invest />} />
         </Routes>
       </Router>
     </div>

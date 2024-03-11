@@ -1,0 +1,41 @@
+.popup-overlay {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.closeButton:hover{
+  background-color: rgb(235, 81, 81);
+}
+.popupCategory{
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.filter-popup{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+.cancelAndApplyButtons{
+  display: flex;
+  align-items: flex-end;
+  text-align: end;
+}
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: auto;
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
