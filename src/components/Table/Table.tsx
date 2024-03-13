@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent } from "react";
 import './Table.css';
 // import Popup from "../components/Popup";
-import { UserData } from "../components/data/UserData";
+import { UserData } from "../data/UserData";
 
 function Table() {
   const [optionFailed, setOptionFailed] = useState(false);

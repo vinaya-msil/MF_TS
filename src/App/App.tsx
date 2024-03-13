@@ -1,10 +1,10 @@
 import "./App.css";
 import { useState } from "react";
 // import OrderBook from "./pages/OrderBook";
-import Trade from "./pages/Trade";
-import Table from "./components/Table";
+import Trade from "../pages/Trade";
+import Table from "../components/Table/Table";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Invest from "./pages/Invest/Invest";
+import Invest from "../pages/Invest/Invest";
 import { Link } from "react-router-dom";
 
 function App() {
@@ -20,7 +20,6 @@ function App() {
     setTradeBtnClass("dontApplyCss");
     setOrderBookBtnClass("applyCss");
  }
-  
   
 
   return (

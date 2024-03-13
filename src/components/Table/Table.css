@@ -9,6 +9,7 @@ table{
     color: white;
     border: 1px solid white;
 }
+
 .selectOption{
     height: auto;
     width: auto;
@@ -23,6 +24,7 @@ table{
 td,th{
     min-width: 100px;
     max-width: 400px;
+    width:14vw ;
     align-items: center;
     justify-content: center;
 }

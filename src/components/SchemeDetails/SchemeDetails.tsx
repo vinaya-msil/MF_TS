@@ -1,6 +1,6 @@
 import React from "react";
 import "./SchemeDetails.css";
-import { investData } from "../investData";
+import { investData } from "../data/investData";
 
 interface InvestData {
   fundAge: string;

@@ -5,8 +5,8 @@ import "./Invest.css";
 import InvestHeader from "../../components/InvestHeader/InvestHeader";
 import FundManager from "../../components/FundManager/FundManager";
 import RiskAndRating from "../../components/RiskAndRating/RiskAndRating";
-import Overview from "../../components/Overview";
-// import CalculateReturns from "../../components/CalculateReturns";
+import Overview from "../../components/Overview/Overview";
+import CalculateReturns from "../../components/CalculateReturns/CalculateReturns";
 // import YourInvestmentPad from "../../components/YourInvestmentPad";
 import SimilarFunds from "../../components/SimilarFunds/SimilarFunds";
 
@@ -28,7 +28,7 @@ const Invest: React.FC<InvestProps> = () => {
         </div>
         <div className="overview-section">
           <Overview fundKey={fundKey} />
-          {/* <CalculateReturns fundKey={fundKey} /> */}
+          <CalculateReturns fundKey={fundKey} />
         </div>
         <SchemeDetails />
         <FundManager />

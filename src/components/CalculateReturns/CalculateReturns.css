@@ -1,0 +1,84 @@
+.main{
+    overflow: auto;
+    margin: 12px;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: white;
+    box-shadow:  1px 1px 5px rgb(206, 205, 205);
+    width: 70vw;
+    height: auto;
+}
+.nav-section-returns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header-section{
+    display: flex;
+    flex-direction: row;
+}
+.side-section-returns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.side-section-returns h3{
+    margin-left: 20px;
+}
+.head-calculate-returns{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.radio-buttons-section{
+    margin-bottom: 20px;
+}
+.range-section{
+    display: flex;
+    flex-direction: row;
+}
+#rangeInput{
+    width: 50vw;
+}
+.bar-grapg-section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.bar-graph-image{
+    height: 500px;
+    width: 500px;
+    margin-top: 20px;
+}
+.profit-percent{
+    color: rgb(36, 197, 36);
+}
+.pie-chart-text{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+.pie-chart-text h3{
+    margin: 0px;
+}
+.invested-amt-color{
+    color:blue;
+    font-size: 50px;
+}
+.return-amt-color{
+    margin-left: 20px;
+    color: lightblue;
+    font-size: 50px;
+}
+.colors-section{
+    margin-top: 30px;
+    display: flex;
+    height: 250px;
+    width: 300px;
+    flex-direction: column;
+}
+.short-dots{
+    display: flex;
+    flex-direction: row;
+}

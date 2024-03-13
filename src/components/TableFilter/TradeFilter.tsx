@@ -1,38 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./TradeFilter.css";
 import TradeTable from "../TradeTable/TradeTable";
 import TradeFilterBtns from "./TradeFilterBtns";
+import { setSearchText } from "../../redux/slice/SearchSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../redux/store";
+import { DataItem } from "../Type";
 
-interface DataItem {
-  icon: string;
-  investmentType: string;
-  subCategoryName: string;
-  fundName: string;
-  rating: string;
-  reInvestmentPlan: string;
-  category: string;
-  oneYrReturn: string;
-  threeYrReturn: string;
-  fiveYrReturn: string;
-  currentNav: string;
-  minSipInvestment: string;
-}
+interface TradeFilterProps {}
 
-interface TradeFilterProps {
-  data: DataItem[];
-}
+const TradeFilter: React.FC<TradeFilterProps> = () => {
+  const { category } = useSelector((state: RootState) => state.category);
+  const { searchText } = useSelector((state: RootState) => state.search);
+  const { data } = useSelector((state: RootState) => state.data);
 
-const TradeFilter: React.FC<TradeFilterProps> = ({ data }) => {
-  const [searchVal, setSearchVal] = useState<string>("");
-  const [category, setCategory] = useState<string>("Top Rated");
-
+  const dispatch = useDispatch();
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setSearchVal(e.target.value);
+    dispatch(setSearchText(e.target.value));
   }
 
   useEffect(() => {
-    setSearchVal("");
-  }, [category]);
+    dispatch(setSearchText(""));
+  }, [category, dispatch]);
 
   function filterCategory(data: DataItem[]) {
     return data.filter((item) => {
@@ -41,12 +30,12 @@ const TradeFilter: React.FC<TradeFilterProps> = ({ data }) => {
   }
 
   function filterSearch(data: DataItem[]) {
-    if (searchVal === "") {
+    if (searchText === "") {
       return data;
     } else {
-      if (searchVal.length > 2) {
+      if (searchText.length > 2) {
         return data.filter((item) => {
-          return item.fundName.toLowerCase().includes(searchVal.toLowerCase());
+          return item.fundName.toLowerCase().includes(searchText.toLowerCase());
         });
       } else {
         return data;
@@ -60,12 +49,12 @@ const TradeFilter: React.FC<TradeFilterProps> = ({ data }) => {
   return (
     <div className="trade-filter">
       <h2>Explore Mutual Funds</h2>
-      <TradeFilterBtns category={category} setCategory={setCategory} />
+      <TradeFilterBtns />
       <div className="trade-filter-search">
         <input
           className="default search-bar"
           type="search"
-          value={searchVal}
+          value={searchText}
           placeholder="Search Schemes"
           onChange={handleChange}
         />

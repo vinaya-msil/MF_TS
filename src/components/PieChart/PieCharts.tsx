@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import Chart, { ChartConfiguration, registerables } from 'chart.js/auto';
-
-Chart.register(...registerables);
+import Chart, { ChartConfiguration } from 'chart.js/auto';
 
 const PieCharts: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -26,9 +24,6 @@ const PieCharts: React.FC = () => {
 
     const chart = new Chart(ctx, config);
 
-    return () => {
-      chart.destroy();
-    };
   }, []);
 
   return <canvas ref={canvasRef} width={400} height={400} />;
