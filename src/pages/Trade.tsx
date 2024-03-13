@@ -1,5 +1,5 @@
 import TradeFilter from "../components/TableFilter/TradeFilter";
-import { data } from "../components/data";
+import { data } from "../components/data/data";
 
 
 const Trade: React.FC = () => {

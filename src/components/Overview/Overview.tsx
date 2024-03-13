@@ -1,5 +1,5 @@
 import React from "react";
-import { OverviewData } from "./data/OverviewData";
+import { OverviewData } from "../data/OverviewData";
 import "./Overview.css";
 
 interface OverviewProps {
