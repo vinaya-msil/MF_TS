@@ -1,28 +1,31 @@
 import React from "react";
 import "./InvestButtons.css";
 
-interface InvestButtonsProps {
-  investButton: string;
-  setInvestButton: React.Dispatch<React.SetStateAction<string>>;
-}
-
-const InvestButtons: React.FC<InvestButtonsProps> = ({
+function InvestButtons({
   investButton,
-  setInvestButton,
-}) => {
-  const investBtns: string[] = [
+  handleClick,
+}: {
+  investButton: string;
+  handleClick: (data: string) => void;
+}) {
+  const investBtns = [
     "Overview",
     "Scheme Details",
     "Fund Holdings",
     "Peer Comparison",
   ];
-
   return (
     <div className="invest-filter-buttons">
       {investBtns.map((item, index) => {
         if (item === investButton) {
           return (
-            <button key={index} className="selected-invest-button invest-button">
+            <button
+              key={index}
+              className="selected-invest-button invest-button"
+              onClick={() => {
+                handleClick(item);
+              }}
+            >
               {item}
             </button>
           );
@@ -32,7 +35,7 @@ const InvestButtons: React.FC<InvestButtonsProps> = ({
               key={index}
               className="invest-button"
               onClick={() => {
-                setInvestButton(item);
+                handleClick(item);
               }}
             >
               {item}
@@ -42,6 +45,6 @@ const InvestButtons: React.FC<InvestButtonsProps> = ({
       })}
     </div>
   );
-};
+}
 
 export default InvestButtons;

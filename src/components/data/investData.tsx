@@ -19,3 +19,4 @@ export const investData = [{
     lockInPeriod:"Nil",
     expenseRatio:"1.69%"
 }];
+
