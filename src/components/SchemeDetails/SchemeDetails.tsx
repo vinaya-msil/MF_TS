@@ -1,4 +1,3 @@
-import React, { MutableRefObject } from "react";
 import "./SchemeDetails.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";

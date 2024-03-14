@@ -54,5 +54,6 @@
 .trade-filter-search img{
     position: absolute;
     right: 0;
-    top: 12px;
+    top: 6px;
+    margin: 2px;
 }

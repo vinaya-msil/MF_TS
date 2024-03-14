@@ -5,11 +5,12 @@ import "./Invest.css";
 import InvestHeader from "../../components/InvestHeader/InvestHeader";
 import FundManager from "../../components/FundManager/FundManager";
 import RiskAndRating from "../../components/RiskAndRating/RiskAndRating";
-import SimilarFunds from "../../components/SimilarFunds/SimilarFunds";
 import Overview from "../../components/Overview/Overview";
 import CalculateReturns from "../../components/CalculateReturns/CalculateReturns";
 import { useDispatch } from "react-redux";
 import { changeInvestButton } from "../../redux/slice/investButtonSlice";
+import YourInvestmentPad from "../../components/YourInvestmentPad/YourInvestmentPad";
+import SimilarFunds from "../../components/SimilarFunds/SimilarFunds";
 
 function Invest() {
   const fundKey = "sixTwo";
@@ -21,13 +22,13 @@ function Invest() {
     dispatch(changeInvestButton(data));
     switch (data) {
       case "Overview":
-        overviewRef.current!.scrollIntoView({ behavior: "smooth" });
+        overviewRef.current?.scrollIntoView({ behavior: "smooth" });
         break;
       case "Scheme Details":
-        schemeRef.current!.scrollIntoView({ behavior: "smooth" });
+        schemeRef.current?.scrollIntoView({ behavior: "smooth" });
         break;
       case "Peer Comparison":
-        peerRef.current!.scrollIntoView({ behavior: "smooth" });
+        peerRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   }
   return (
@@ -50,7 +51,7 @@ function Invest() {
           <SimilarFunds />
         </div>
       </div>
-      {/* <YourInvestmentPad /> */}
+      <YourInvestmentPad />
     </div>
   );
 }

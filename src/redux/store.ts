@@ -4,6 +4,8 @@ import masterDataSlice from "./slice/masterDataSlice";
 import CategorySlice from "./slice/CategorySlice";
 import  investDataSlice  from "./slice/investSlice";
 import investButtonSlice from "./slice/investButtonSlice";
+import investmentPadSlice from "./slice/investmentPadSlice";
+import similarDataSlice from "./slice/similarDataSlice";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +14,8 @@ const store = configureStore({
     category:CategorySlice,
     invest:investDataSlice,
     investButton:investButtonSlice,
+    investPad:investmentPadSlice,
+    similar:similarDataSlice,
   },
 });
 export type RootState = ReturnType<typeof store.getState>;

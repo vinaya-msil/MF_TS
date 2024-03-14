@@ -19,3 +19,8 @@ export interface InvestData {
   lockInPeriod: string;
   expenseRatio: string;
 }
+export interface SimilarFundData {
+  icon: string;
+  fundName: string;
+  threeYrReturn: string;
+}
