@@ -1,12 +1,12 @@
 import React from "react";
 import "./InvestButtons.css";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
 function InvestButtons({
-  investButton,
   handleClick,
 }: {
-  investButton: string;
-  handleClick: (data: string) => void;
+  handleClick: (data: string)=>void;
 }) {
   const investBtns = [
     "Overview",
@@ -14,6 +14,9 @@ function InvestButtons({
     "Fund Holdings",
     "Peer Comparison",
   ];
+  const { investButton } = useSelector(
+    (state: RootState) => state.investButton
+  );
   return (
     <div className="invest-filter-buttons">
       {investBtns.map((item, index) => {

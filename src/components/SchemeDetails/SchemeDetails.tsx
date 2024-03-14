@@ -2,11 +2,11 @@ import React, { MutableRefObject } from "react";
 import "./SchemeDetails.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-function SchemeDetails({ scrollRef }: { scrollRef: MutableRefObject<null> }) {
+function SchemeDetails() {
   const { investData } = useSelector((state: RootState) => state.invest);
   const data = investData[0];
   return (
-    <div className="scheme-details" ref={scrollRef}>
+    <div className="scheme-details" >
       <h4>Basic Information</h4>
       <div className="basic-info-body">
         <table>

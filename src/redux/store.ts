@@ -3,6 +3,7 @@ import SearchSlice from "./slice/SearchSlice";
 import masterDataSlice from "./slice/masterDataSlice";
 import CategorySlice from "./slice/CategorySlice";
 import  investDataSlice  from "./slice/investSlice";
+import investButtonSlice from "./slice/investButtonSlice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     search: SearchSlice,
     category:CategorySlice,
     invest:investDataSlice,
+    investButton:investButtonSlice,
   },
 });
 export type RootState = ReturnType<typeof store.getState>;

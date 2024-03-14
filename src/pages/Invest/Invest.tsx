@@ -8,41 +8,47 @@ import RiskAndRating from "../../components/RiskAndRating/RiskAndRating";
 import SimilarFunds from "../../components/SimilarFunds/SimilarFunds";
 import Overview from "../../components/Overview/Overview";
 import CalculateReturns from "../../components/CalculateReturns/CalculateReturns";
+import { useDispatch } from "react-redux";
+import { changeInvestButton } from "../../redux/slice/investButtonSlice";
 
 function Invest() {
   const fundKey = "sixTwo";
-  const [investButton, setInvestButton] = useState("Overview");
-  const overviewRef = useRef(null);
-  const schemeDetailsRef = useRef(null);
+  const dispatch = useDispatch();
+  const overviewRef = useRef<HTMLDivElement>(null);
+  const schemeRef = useRef<HTMLDivElement>(null);
+  const peerRef = useRef<HTMLDivElement>(null);
   function handleClick(data: string) {
-    // setInvestButton(data);
-    // switch (data) {
-    //   case "Overview":
-    //     overviewRef.current.scrollIntoView({ behavior: "smooth" });
-    //     break;
-    //   case "Scheme Details":
-    //     schemeDetailsRef.current.scrollIntoView({ behavior: "smooth" });
-    //     break;
-    // }
+    dispatch(changeInvestButton(data));
+    switch (data) {
+      case "Overview":
+        overviewRef.current!.scrollIntoView({ behavior: "smooth" });
+        break;
+      case "Scheme Details":
+        schemeRef.current!.scrollIntoView({ behavior: "smooth" });
+        break;
+      case "Peer Comparison":
+        peerRef.current!.scrollIntoView({ behavior: "smooth" });
+    }
   }
   return (
     <div className="invest">
       <div className="invest-body">
         <div className="card-layout">
           <InvestHeader />
-          <InvestButtons
-            investButton={investButton}
-            handleClick={handleClick}
-          />
+          <InvestButtons handleClick={handleClick} />
         </div>
         <div className="overview-section" ref={overviewRef}>
           <Overview fundKey={fundKey} />
           <CalculateReturns fundKey={fundKey} />
         </div>
-        <SchemeDetails scrollRef={schemeDetailsRef} />
+        <div ref={schemeRef}>
+          <SchemeDetails />
+        </div>
         <FundManager />
         <RiskAndRating />
-        <SimilarFunds />
+        <div ref={peerRef}>
+          <SimilarFunds />
+        </div>
       </div>
       {/* <YourInvestmentPad /> */}
     </div>
