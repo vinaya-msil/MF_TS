@@ -4,7 +4,8 @@ import "./CalculateReturns.css";
 // import { Dispatch,  } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import {handleoneYearClass,handletenYearClass,
-    handlefiveYearClass,handlethreeYearClass,changeButtonAmount, } from "../../redux/CalculateReturnsSlice";
+    handlefiveYearClass,handlethreeYearClass,changeButtonAmount,
+    handleSipRadio,handleOneTimeRadio } from "../../redux/CalculateReturnsSlice";
 import { OverviewData } from "../data/OverviewData";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
 // import { useDispatch } from "react-redux";
@@ -21,26 +22,6 @@ interface Data {
       backgroundColor: string[];
     }[];
   }
-  
-//   interface OverviewDataType {
-//     key: string;
-//     investmentType: string;
-//     subCategoryName: string;
-//     fundName: string;
-//     clientCode: string;
-//     OrderDate: string;
-//     orderType: string;
-//     amount: number;
-//     orderCategory: string;
-//     orderStatus: string;
-//     category: string;
-//     imageUrl: string;
-//     status: string;
-//     returns: number;
-//     returnYears: number;
-//     data: Data;
-//     options: any; 
-//   }
 
   const CalculateReturns: React.FC<OverviewProps> = (props) => {
     const dispatch = useDispatch();
@@ -62,9 +43,9 @@ interface Data {
             </div>
             <section className="radio-buttons-section">
                 
-                <input type="radio" value="sip" id="SipRadio" />
+                <input type="radio" value="sip" id="SipRadio" checked={reduxClass.sipChecked} onClick={()=>dispatch(handleSipRadio())} />
                 <label >SIP</label>
-                <input type="radio" value="onetime" id="OneTimeRadio" />
+                <input type="radio" value="onetime" id="OneTimeRadio" checked={reduxClass.oneTimeChecked} onClick={()=>dispatch(handleOneTimeRadio())} />
                 <label >OneTime</label>
             </section>
             <section className="range-section">

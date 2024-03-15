@@ -2,26 +2,15 @@ import React from "react";
 import "./TradeTable.css";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
+import { DataItem } from "../Type";
 
-interface DataItem {
-  icon: string;
-  investmentType: string;
-  subCategoryName: string;
-  fundName: string;
-  rating: string;
-  reInvestmentPlan: string;
-  oneYrReturn: string;
-  threeYrReturn: string;
-  fiveYrReturn: string;
-  currentNav: string;
-  minSipInvestment: string;
-}
 
 interface TradeTableProps {
   filteredData: DataItem[];
 }
 
 const TradeTable: React.FC<TradeTableProps> = ({ filteredData }) => {
+
   return (
     <div className="table-wrapper">
       <table className="trade-table">

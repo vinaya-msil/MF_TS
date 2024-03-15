@@ -4,7 +4,7 @@ export const appSlice = createSlice({
   name: "app",
   initialState: {
     tradeBtnClass:"dontApplyCss",
-    orderBookBtnClass:"applyCss"
+    orderBookBtnClass:"applyCss",
   },
   reducers: {
     changeTradeBtnClass: (state) => {

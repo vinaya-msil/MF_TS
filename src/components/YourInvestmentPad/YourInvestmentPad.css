@@ -1,0 +1,134 @@
+.investment-main{
+    margin: 10px;
+    border-radius: 12px;
+    height: auto;
+    padding-top: 5px;
+}
+.head-section{
+    background-color: white;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 12px 12px 0px 0px;
+    margin-bottom: 2px;
+    padding: 10px;
+}
+.search-section{
+    background-color: white;
+    padding: 10px;
+}
+.smallDetails{
+    padding: 10px;
+}
+.invest-search{
+    padding: 10px;
+    width: 160px;
+    border-radius: 4px;
+    border:1px solid rgb(204, 204, 204);
+    margin-left: 10px;
+}
+.add-button{
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-left: 3px;
+}
+.nav-for-sip-onetime{
+    display: flex;
+    flex-direction: row;
+    padding-block: 1px;
+    justify-content: space-around;
+    border-radius: 12px 12px 0px 0px;
+}
+.similar-invest{
+    border: 1px solid rgb(240, 237, 237);
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    padding-inline: 0;
+    border-bottom: 0;
+}
+.selected-invest-pad{
+    border-top: 2px solid rgb(65, 124, 39);
+    background-color:rgb(200, 232, 245);   
+}
+.invest-pad{
+    background-color: white;
+}
+.nav-body{
+    background-color:rgb(200, 232, 245);   
+}
+.invest-amount-body{
+padding-bottom: 10px;
+background-color:rgb(200, 232, 245);   
+}
+.invest-amount-inner{
+    background-color: white;
+    margin: 20px;
+    padding: 15px;
+}
+.invest-amount{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    margin: 10px 10px;
+}
+.sip-input{
+    border: none;
+    text-align: center;
+}
+.select-amount-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    gap: 10px;
+}
+.select-amount-buttons button{
+    border: 1px solid rgb(224, 224, 224);
+    cursor: pointer;
+    color: black;
+    padding: 10px;border-radius: 5px;
+}
+.first-order-radio{
+    background-color: white;
+    padding: 15px;
+}
+
+
+/* .select-amount-buttons{
+    display: flex;
+    flex-direction: row;
+}
+.select-amount-buttons h4{
+    padding: 5px;
+    border: 1px solid grey;
+    margin: 5px;
+    border-radius: 10px;
+}
+.present{
+    background-color: blue;
+    color: white;
+    margin-bottom: 0px;
+} */
+
+
+/* .invest-smallDetails{
+    margin-left: 8px;
+    margin-bottom: 10px;
+} */
+/* .invest-amount-selector{
+    border: 2px solid lightblue;
+    border-radius: 10px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background-color: aliceblue;
+    height: 25vw;
+    width: 20vw;
+    border-radius: 0px 0px 12px 12px;
+    margin-top: 0px;
+} */

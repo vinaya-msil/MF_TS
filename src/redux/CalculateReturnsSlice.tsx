@@ -10,8 +10,19 @@ export const calculateReturnsSlice = createSlice({
      tenYearClass         :'button',
      amountInButton       :500,
      dataYear             :'dataOneYear',
+     sipChecked           :true,
+     oneTimeChecked       :false,
+     
   },
   reducers: {
+    handleSipRadio    :(state)=>{
+      state.sipChecked = true;
+      state.oneTimeChecked = false;
+    },
+    handleOneTimeRadio    :(state)=>{
+      state.sipChecked = false;
+      state.oneTimeChecked = true;
+    },
     changeButtonAmount:(state,action)=>{
       state.amountInButton = action.payload;
     },
@@ -53,7 +64,8 @@ export const calculateReturnsSlice = createSlice({
 }); 
 // Action creators are generated for each case reducer function
 export const { handleoneYearClass,handletenYearClass,
-  handlefiveYearClass,handlethreeYearClass,changeButtonAmount, } 
+  handlefiveYearClass,handlethreeYearClass,changeButtonAmount, 
+  handleSipRadio,handleOneTimeRadio} 
     = calculateReturnsSlice.actions;
 
 export default calculateReturnsSlice.reducer;

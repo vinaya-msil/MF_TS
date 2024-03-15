@@ -1,18 +1,11 @@
-import React from "react";
 import "./SchemeDetails.css";
-import { investData } from "../data/investData";
-
-interface InvestData {
-  fundAge: string;
-  fundSize: string;
-  lockInPeriod: string;
-  expenseRatio: string;
-}
-
-const SchemeDetails: React.FC = () => {
-  const data: InvestData = investData[0];
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+function SchemeDetails() {
+  const { investData } = useSelector((state: RootState) => state.invest);
+  const data = investData[0];
   return (
-    <div className="scheme-details">
+    <div className="scheme-details" >
       <h4>Basic Information</h4>
       <div className="basic-info-body">
         <table>
@@ -41,8 +34,8 @@ const SchemeDetails: React.FC = () => {
               <td>
                 <div className="basic-info-data left">
                   <p>
-                    <span className="material-symbols-outlined">lock</span>Lock-in
-                    Period
+                    <span className="material-symbols-outlined">lock</span>
+                    Lock-in Period
                   </p>
                   <p>{data.lockInPeriod}</p>
                 </div>
@@ -77,12 +70,12 @@ const SchemeDetails: React.FC = () => {
                   <div className="tax-body">
                     <p>Tax Implications</p>
                     <p>
-                      Withdrawal within 1 year <br />
-                      Exit load + 15% tax on gains
+                      Withdrawal within 1 year <br></br>Exit load + 15% tax on
+                      gains
                     </p>
                     <p>
-                      Withdrawal after 1 year <br />
-                      10% tax on gains over ₹1 Lakh per financial year
+                      Withdrawal after 1 year <br></br>10% tax on gains over ₹1
+                      Lakh per financial year
                     </p>
                   </div>
                 </div>
@@ -94,6 +87,6 @@ const SchemeDetails: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default SchemeDetails;

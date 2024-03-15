@@ -1,28 +1,34 @@
 import React from "react";
 import "./InvestButtons.css";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
-interface InvestButtonsProps {
-  investButton: string;
-  setInvestButton: React.Dispatch<React.SetStateAction<string>>;
-}
-
-const InvestButtons: React.FC<InvestButtonsProps> = ({
-  investButton,
-  setInvestButton,
-}) => {
-  const investBtns: string[] = [
+function InvestButtons({
+  handleClick,
+}: {
+  handleClick: (data: string)=>void;
+}) {
+  const investBtns = [
     "Overview",
     "Scheme Details",
     "Fund Holdings",
     "Peer Comparison",
   ];
-
+  const { investButton } = useSelector(
+    (state: RootState) => state.investButton
+  );
   return (
     <div className="invest-filter-buttons">
       {investBtns.map((item, index) => {
         if (item === investButton) {
           return (
-            <button key={index} className="selected-invest-button invest-button">
+            <button
+              key={index}
+              className="selected-invest-button invest-button"
+              onClick={() => {
+                handleClick(item);
+              }}
+            >
               {item}
             </button>
           );
@@ -32,7 +38,7 @@ const InvestButtons: React.FC<InvestButtonsProps> = ({
               key={index}
               className="invest-button"
               onClick={() => {
-                setInvestButton(item);
+                handleClick(item);
               }}
             >
               {item}
@@ -42,6 +48,6 @@ const InvestButtons: React.FC<InvestButtonsProps> = ({
       })}
     </div>
   );
-};
+}
 
 export default InvestButtons;
