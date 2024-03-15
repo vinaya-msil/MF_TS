@@ -230,10 +230,6 @@ setWithdrawClass("nothing");
           </select>
         </label>
 <button className="filterButton" onClick={toggleVisibility}>Filters</button>
-        {/* {isHidden ? null : <Popup optionFailed={optionFailed} setOptionFailed={setOptionFailed}
-          setStatus={setStatus} optionSuccess={optionSuccess} setOptionSuccess={setOptionSuccess}
-          setDateFrom={setDateFrom} setDateTo={setDateTo} />
-        } */}
         <hr />
         <div className="table">
           {purchaseComponent && <StocksTable stocksDataArray={filteredRows} stocksHeaderArray={headersOfTable} category={'Purchased'} itemsPerPage={4} />}

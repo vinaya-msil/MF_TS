@@ -79,6 +79,17 @@ export default function YourInvestmentPad() {
         <input type="radio" value={"No"} id="radio-no"/>
         <label>No</label>
       </div>
+      <div className="select-mandate">
+        <p>Select Mandate</p>
+        <select className="select-mandate-drop">
+            <option value=''>SELECT MANDATE</option>
+            <option value='Lumpsum'>Lumpsum</option>
+            <option value='Intraday'>Intraday</option>
+            <option value='SIP'>SIP</option>
+          </select>
+          <p className="select-mandate-text">By proceeding, you accept AngelOne's <span>T&C</span> </p>
+          <button className="select-mandate-btn">INVEST</button>
+      </div>
     </div>
   );
 }
