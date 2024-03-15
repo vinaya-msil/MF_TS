@@ -30,7 +30,10 @@ interface OverviewDataType {
   status: string;
   returns: number;
   returnYears: number;
-  data: Data;
+  dataOneYear: Data;
+  dataThreeYear: Data;
+  dataFiveYear: Data;
+  dataTenYear: Data;
   options: any; 
 }
 
@@ -61,7 +64,7 @@ const Overview: React.FC<OverviewProps> = (props) => {
       </section>
       <hr />
       <section className="example-chart">
-        <img className="example-chart-image" src="example-of-line-chart.png" alt="Example Chart" />
+        <img className="example-chart-image" src="replacethisimage.png" alt="Example Chart" />
       </section>
     </div>
   );

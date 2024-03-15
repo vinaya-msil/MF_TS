@@ -3,6 +3,7 @@
     margin-right: 10px;
     height:25px;
     width: 25px;
+
 }
 .overview-head{
     font-weight: bold;
@@ -25,8 +26,8 @@ h2,h1{
     align-items: start;
 }
 .example-chart-image{
-    height: 400px;
-    /* width: 70vw; */
+    height: auto;
+    width: auto;
 }
 .returns-section h1{
     display: flex;
@@ -44,11 +45,20 @@ h2,h1{
     
 }
 .overview-component{
+    /* overflow: auto;
+    width: 60vw;
+    margin: 12px;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: white;
+    box-shadow:  1px 1px 5px rgb(206, 205, 205); */
     overflow: auto;
-    /* width: 70vw; */
     margin: 12px;
     border-radius: 12px;
     padding: 20px;
     background-color: white;
     box-shadow:  1px 1px 5px rgb(206, 205, 205);
+    width: 60vw;
+    min-height: 700px;
+    min-width: 400px;
 }

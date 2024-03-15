@@ -8,6 +8,7 @@ import RiskAndRating from "../../components/RiskAndRating/RiskAndRating";
 import Overview from "../../components/Overview/Overview";
 import CalculateReturns from "../../components/CalculateReturns/CalculateReturns";
 // import YourInvestmentPad from "../../components/YourInvestmentPad";
+import FundHoldings from "../../components/FundHoldings/FundHoldings";
 import SimilarFunds from "../../components/SimilarFunds/SimilarFunds";
 
 interface InvestProps {}
@@ -34,8 +35,10 @@ const Invest: React.FC<InvestProps> = () => {
         <FundManager />
         <RiskAndRating />
         <SimilarFunds />
+        <FundHoldings fundKey={fundKey} />
       </div>
       {/* <YourInvestmentPad /> */}
+      
     </div>
   );
 };
