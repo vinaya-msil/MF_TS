@@ -93,7 +93,10 @@ background-color:rgb(200, 232, 245);
     color: black;
     padding: 10px;border-radius: 5px;
 }
-
+.first-order-radio{
+    background-color: white;
+    padding: 15px;
+}
 
 
 /* .select-amount-buttons{

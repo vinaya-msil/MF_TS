@@ -72,6 +72,13 @@ export default function YourInvestmentPad() {
           </div>
         </div>
       </div>
+      <div className="first-order-radio">
+        <p>First Order Today</p>
+        <input type="radio" value={"Yes"} id="radio-yes"/>
+        <label>Yes</label>
+        <input type="radio" value={"No"} id="radio-no"/>
+        <label>No</label>
+      </div>
     </div>
   );
 }
