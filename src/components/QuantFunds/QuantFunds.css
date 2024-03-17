@@ -1,0 +1,28 @@
+.quant-funds{
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: auto;
+}
+.quant-funds h4{
+    margin: 0;
+    color: black;
+}
+.quant-fund-table{
+    width: 100%;
+}
+.basic-info-data-head{
+    color: grey;
+}
+.quant-fund-first-row{
+    display: flex;
+}
+.quant-fund-first-row span{
+    padding: 5px;
+}
+.bank-name p{
+    margin: 5px;
+}
+.dot{
+    font-weight: bold;
+}

@@ -24,3 +24,10 @@ export interface SimilarFundData {
   fundName: string;
   threeYrReturn: string;
 }
+export interface QuantFunds {
+  icon: string;
+  investmentType: string;
+  subCategoryName: string;
+  fundName: string;
+  threeYrReturn: string;
+}

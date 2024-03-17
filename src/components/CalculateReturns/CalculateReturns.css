@@ -5,8 +5,9 @@
     padding: 20px;
     background-color: white;
     box-shadow:  1px 1px 5px rgb(206, 205, 205);
-    width: 70vw;
-    height: auto;
+    width: 60vw;
+    min-height: 700px;
+    min-width: 400px;
 }
 .nav-section-returns{
     display: flex;

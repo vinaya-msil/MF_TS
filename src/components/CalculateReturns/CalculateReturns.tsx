@@ -1,8 +1,16 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import "./CalculateReturns.css";
+// import { Dispatch,  } from "redux";
+import { useDispatch, useSelector } from "react-redux";
+import {handleoneYearClass,handletenYearClass,
+    handlefiveYearClass,handlethreeYearClass,changeButtonAmount,
+    handleSipRadio,handleOneTimeRadio } from "../../redux/CalculateReturnsSlice";
 import { OverviewData } from "../data/OverviewData";
 import DoughnutChart from "../DoughnutChart/DoughnutChart";
+// import { useDispatch } from "react-redux";
+
+
 
 interface OverviewProps {
     fundKey: keyof typeof OverviewData;
@@ -14,64 +22,17 @@ interface Data {
       backgroundColor: string[];
     }[];
   }
-  
-  interface OverviewDataType {
-    key: string;
-    investmentType: string;
-    subCategoryName: string;
-    fundName: string;
-    clientCode: string;
-    OrderDate: string;
-    orderType: string;
-    amount: number;
-    orderCategory: string;
-    orderStatus: string;
-    category: string;
-    imageUrl: string;
-    status: string;
-    returns: number;
-    returnYears: number;
-    data: Data;
-    options: any; 
-  }
 
   const CalculateReturns: React.FC<OverviewProps> = (props) => {
-    const data: OverviewDataType = OverviewData[props.fundKey];
-    // console.log('props from cal returns', props);
-    const [oneYearClass,   setOneYearClass  ] = useState('selected-button');
-    const [threeYearClass, setThreeYearClass] = useState('');
-    const [fiveeYearClass, setFiveYearClass ] = useState('');
-    const [tenYearClass,   setTeneYearClass ] = useState('');
-    
-    const handleClassOneYear = ()=>{
-        setOneYearClass("selected-button");
-        setThreeYearClass("");
-        setFiveYearClass("");
-        setTeneYearClass("");
-    }  
-    const handleClassThreeYear = ()=>{
-        setOneYearClass("");
-        setThreeYearClass("selected-button");
-        setFiveYearClass("");
-        setTeneYearClass("");
-    } 
-    const handleClassFiveYear = ()=>{
-        setOneYearClass("");
-        setThreeYearClass("");
-        setFiveYearClass("selected-button");
-        setTeneYearClass("");
-    } 
-    const handleClassTenYear = ()=>{
-        setOneYearClass("");
-        setThreeYearClass("");
-        setFiveYearClass("");
-        setTeneYearClass("selected-button");
-    } 
+    const dispatch = useDispatch();
+    // const data: OverviewDataType = OverviewData[props.fundKey];
+    const reduxClass = useSelector((state:any) => state.CalculateReturnsSlice);
 
-    const handleRangechange = ()=>{}
-
-    
-    
+    const handleRangechange = (event : React.ChangeEvent<HTMLInputElement>)=>{
+        // console.log(event.target.value);
+        dispatch(changeButtonAmount(Number(event.target.value)*10));
+    }
+    const dataYearHere = reduxClass.dataYear
     return(
         <div className="main">
             <div className="head-calculate-returns">
@@ -82,9 +43,9 @@ interface Data {
             </div>
             <section className="radio-buttons-section">
                 
-                <input type="radio" value="sip" id="SipRadio" />
+                <input type="radio" value="sip" id="SipRadio" checked={reduxClass.sipChecked} onClick={()=>dispatch(handleSipRadio())} />
                 <label >SIP</label>
-                <input type="radio" value="onetime" id="OneTimeRadio" />
+                <input type="radio" value="onetime" id="OneTimeRadio" checked={reduxClass.oneTimeChecked} onClick={()=>dispatch(handleOneTimeRadio())} />
                 <label >OneTime</label>
             </section>
             <section className="range-section">
@@ -93,39 +54,39 @@ interface Data {
                     
                 </div>
                 <div>
-                    <input id="rangeInput" type="range"  />
-                    <button> 1000 </button>
+                    <input id="rangeInput" type="range" onChange={handleRangechange} />
+                    <button> {reduxClass.amountInButton} </button>
                 </div>
             </section>
             <section className="nav-section-returns">
                 <div className="navigation-section">
-                    <button className={oneYearClass}   onClick={handleClassOneYear  } >1 Year</button>
-                    <button className={threeYearClass} onClick={handleClassThreeYear} >3 Years</button>
-                    <button className={fiveeYearClass} onClick={handleClassFiveYear } >5 Years</button>
-                    <button className={tenYearClass}   onClick={handleClassTenYear  } >10 Years</button>
+                    <button className={reduxClass.oneYearClass} 
+                        onClick={() => dispatch(handleoneYearClass())} >1 Year</button>
+                    <button className={reduxClass.threeYearClass} 
+                        onClick={() => dispatch(handlethreeYearClass())} >3 Years</button>
+                    <button className={reduxClass.fiveeYearClass} 
+                        onClick={() => dispatch(handlefiveYearClass())} >5 Years</button>
+                    <button className={reduxClass.tenYearClass} 
+                        onClick={() => dispatch(handletenYearClass())} >10 Years</button>
                 </div>
                 <div className="side-section-returns">
                     <p className="smallDetails">Expected Returns <br/>
                             Funds <b>n</b> Y annual returns
                     </p>
-                    <h3> {(OverviewData[props.fundKey]).returns} % p.a</h3>
+
+                    <h3> {(OverviewData[props.fundKey] as any)[dataYearHere].returns} % p.a</h3>
                 </div>
             </section>
 
             <section className="bar-grapg-section">
                 <div className="colors-section">
-                    {/* <img className="bar-graph-image" src="piechart.png" /> */}
                     
                     <DoughnutChart fundKey={props.fundKey} />
-                    
-                    {/* <div className="short-dots">
-                        <section><h1 className="invested-amt-color">.<span className="smallDetails">Invested </span></h1> </section>
-                        <section><h1 className="return-amt-color"> .<span className="smallDetails">Gains</span> </h1></section>
-                    </div> */}
                 </div>
                 <div className="pie-chart-text">
                     <p className="smallDetails">if you invest  100 for n years</p><br/>
-                    <h3>Total Value: 77,434 <span className="smallDetails profit-percent">(+115%)</span></h3>
+                    <h3>Total Value: {(OverviewData[props.fundKey] as any)[dataYearHere].totalValue} 
+                     <span className="smallDetails profit-percent">+{(OverviewData[props.fundKey] as any)[dataYearHere].percentage}%</span></h3>
                 </div>
             </section>
 

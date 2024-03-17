@@ -4,6 +4,7 @@ import store from './redux/store';
 import './index.css';
 import { Provider } from 'react-redux';
 import App from './App/App';
+// import ChangeTradeStates from './ChangeTradeStates';
 
 const root = ReactDOM.createRoot(document.getElementById('root')as HTMLElement);
 root.render(

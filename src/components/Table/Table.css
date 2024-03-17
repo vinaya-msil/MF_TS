@@ -25,6 +25,7 @@ td,th{
     min-width: 100px;
     max-width: 400px;
     width:14vw ;
+    text-align: center;
     align-items: center;
     justify-content: center;
 }
@@ -34,11 +35,15 @@ th, tr{
 #OrderTypeText{
     margin-left: 10px;
 }
+.order-type-label{
+    display: inline-block;
+}
 .filterButton{
     margin-left: 10px;
 }
 .navigation-section,.OrderBookComponent{
     overflow: auto;
+    height: auto;
 }
 .OrderBookComponent{
     box-shadow:  1px 1px 5px rgb(206, 205, 205);
@@ -91,6 +96,8 @@ button{
     color: rgb(49, 49, 196);
     background-color: white;
     padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
 }
 label{
     font-size: 14px;

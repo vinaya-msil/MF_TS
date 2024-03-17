@@ -26,7 +26,7 @@ const RiskAndRating: React.FC = () => {
             <p className="risk-star">
               4
               <img
-                src="./assets/star-rate-svgrepo-com.svg"
+                src="./assets/star.png"
                 alt="rating"
                 width={10}
               />
@@ -34,7 +34,7 @@ const RiskAndRating: React.FC = () => {
             <p className="risk-star">
               5
               <img
-                src="./assets/star-rate-svgrepo-com.svg"
+                src="./assets/star.png"
                 alt="rating"
                 width={10}
               />
@@ -42,7 +42,7 @@ const RiskAndRating: React.FC = () => {
             <p className="risk-star">
               4
               <img
-                src="./assets/star-rate-svgrepo-com.svg"
+                src="./assets/star.png"
                 alt="rating"
                 width={10}
               />
@@ -50,7 +50,7 @@ const RiskAndRating: React.FC = () => {
             <p className="risk-star">
               4
               <img
-                src="./assets/star-rate-svgrepo-com.svg"
+                src="./assets/star.png"
                 alt="rating"
                 width={10}
               />

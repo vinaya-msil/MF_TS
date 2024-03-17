@@ -42,7 +42,7 @@ const TradeTable: React.FC<TradeTableProps> = ({ filteredData }) => {
                       <span className="span-rating">
                         {item.rating}
                         <img
-                          src="./assets/star-rate-svgrepo-com.svg"
+                          src="./assets/star.png"
                           alt="rating"
                           width={10}
                         />

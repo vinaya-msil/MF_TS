@@ -8,9 +8,8 @@
 }
 .App{
   overflow: auto;
-  background-color: aliceblue;
-  height: auto;
-  /* height: 100vh; */
+  background-color: rgb(216, 232, 245);
+  height: 100vh;
 }
 header{
   background-color: white;

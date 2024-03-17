@@ -1,57 +1,37 @@
 import "./Popup.css";
-import React, { useState } from "react";
-
-interface PopupProps {
-    optionSuccess: boolean;
-    setOptionSuccess: React.Dispatch<React.SetStateAction<boolean>>;
-    optionFailed: boolean;
-    setOptionFailed: React.Dispatch<React.SetStateAction<boolean>>;
-    setStatus: React.Dispatch<React.SetStateAction<string>>;
-    setDateFrom: React.Dispatch<React.SetStateAction<string>>;
-    setDateTo: React.Dispatch<React.SetStateAction<string>>;
-}
+import { useDispatch, useSelector } from "react-redux";
+import { changeOptionSuccess,changeOptionFailed,
+     changeOptionSetDateFrom, changeOptionSetDateTo
+     ,changeStatus, changeIsHidden,toggleSetDateComp, toggleSetStatusComp   } from "../../redux/TableSlice";
+interface PopupProps {}
 
 const Popup: React.FC<PopupProps> = (props) => {
-    const [isVisible, setIsVisible] = useState<boolean>(true);
-    const [dateComp, setDateComp] = useState<boolean>(true);
-    const [statusComp, setStatusComp] = useState<boolean>(false);
-    const [dateFrom, setDateFrom] = useState<string>('0/0/0');
-    const [dateTo, setDateTo] = useState<string>("90000/12/31");
-
-    const handleDateFromChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setDateFrom(event.target.value);
-    };
-
-    const handleDateToChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setDateTo(event.target.value);
-    };
-
+    const reduxClass = useSelector((state:any) => state.tableSlice);
+    const dispatch = useDispatch();
+    
+    const handleDateFromChangeNew = (event: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(changeOptionSetDateFrom(event.target.value));};
+    const handleDateToChangeNew = (event: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(changeOptionSetDateTo(event.target.value));};
     const handlePopupCategoryDate = () => {
-        setDateComp(true);
-        setStatusComp(false);
+        dispatch(toggleSetDateComp(true));
+        dispatch(toggleSetStatusComp(false));
     };
-
     const handleApply = () => {
-        let tempStatus = props.optionFailed ? "Failed" : props.optionSuccess ? "Success" : "";
-        props.setStatus(tempStatus);
-        props.setOptionSuccess(props.optionSuccess);
-        props.setOptionFailed(props.optionFailed);
-        props.setDateFrom(dateFrom);
-        props.setDateTo(dateTo);
+        let tempStatus = reduxClass.optionFailed ? "Failed" : reduxClass.optionSuccess ? "Success" : "";
+        dispatch(changeStatus(tempStatus));
+        hideComponent();
     };
-
     const handlePopupCategoryStatus = () => {
-        setDateComp(false);
-        setStatusComp(true);
+        dispatch(toggleSetDateComp(false));
+        dispatch(toggleSetStatusComp(true));
     };
-
     const hideComponent = () => {
-        setIsVisible(!isVisible);
+        dispatch(changeIsHidden());
     };
-
     return (
         <>
-            {isVisible && (
+            {reduxClass.isVisible && (
                 <div className="popup-overlay">
                     <div className="popup-content">
                         <div className="filter-popup">
@@ -60,21 +40,22 @@ const Popup: React.FC<PopupProps> = (props) => {
                                 <button onClick={handlePopupCategoryStatus}>STATUS</button>
                             </div>
                             <div>
-                                {dateComp && (
+                                {reduxClass.dateComp && (
                                     <div>
                                         <h5>Date</h5>
                                         <p>Date From</p>
-                                        <input onChange={handleDateFromChange} type="date"></input>
+                                        <input onChange={handleDateFromChangeNew} type="date"></input>
                                         <p>Date To</p>
-                                        <input onChange={handleDateToChange} type="date"></input>
+                                        <input onChange={handleDateToChangeNew} type="date"></input>
+                                        
                                     </div>
                                 )}
 
-                                {statusComp && (
+                                {reduxClass.statusComp && (
                                     <div>
                                         <h5>Status</h5>
                                         <input
-                                            onClick={() => props.setOptionSuccess(!props.optionSuccess)}
+                                            onClick={() => dispatch(changeOptionSuccess(reduxClass.optionSuccess))}
                                             id="Completed"
                                             value="Completed"
                                             type="checkbox"
@@ -82,7 +63,7 @@ const Popup: React.FC<PopupProps> = (props) => {
                                         <label>Completed</label>
 
                                         <input
-                                            onClick={() => props.setOptionFailed(!props.optionFailed)}
+                                            onClick={() => dispatch(changeOptionFailed(reduxClass.optionFailed))}
                                             id="Failed"
                                             value="Failed"
                                             type="checkbox"
@@ -94,7 +75,6 @@ const Popup: React.FC<PopupProps> = (props) => {
                         </div>
                         <div className="cancelAndApplyButtons">
                             <br />
-                            <button className="reset-button">RESET</button>
                             <button onClick={handleApply} className="apply-button">
                                 APPLY
                             </button>
